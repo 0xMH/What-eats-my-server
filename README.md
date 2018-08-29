@@ -14,3 +14,7 @@ Curated list of things to check for troubleshooting
 
 ### CPU
 https://unix.stackexchange.com/a/279354/123625
+
+
+## Journalctl
+https://superuser.com/a/1188380/760542
