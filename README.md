@@ -12,3 +12,5 @@ Curated list of things to check for troubleshooting
 
 ## Hardware
 
+### CPU
+https://unix.stackexchange.com/a/279354/123625
