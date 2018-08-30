@@ -9,6 +9,7 @@ Curated list of things to check for troubleshooting
     * Load
     * Disk
 - [Journalctl]()
+- Network
 
 ## Hardware
 
@@ -21,3 +22,8 @@ https://unix.stackexchange.com/questions/113840/whats-eating-my-disk-space
 
 ## Journalctl
 https://superuser.com/a/1188380/760542
+
+## Network
+Knowing what serivce lestining on a port
+`ss -plnt 'sport = :80'`
+
