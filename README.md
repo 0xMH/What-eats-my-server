@@ -18,7 +18,7 @@ Curated list of things to check for troubleshooting
 *First:* Using `lscpu` command to determine the number of CPUs we have
 
 <details>
-<summary><b>How to use `lscpu`?</b></summary><br>
+<summary><b>lscpu Explanation</b></summary><br>
 
 
 Expample #1: 
@@ -81,17 +81,13 @@ Expample #2: Taking it a bit further
 
 </details>
 
-
-
-*Second:*
-
-Getting the load averages for the past 1, 5, and 15 minutes.
+*Second:* Getting the load averages for the past 1, 5, and 15 minutes.
 
     $ w 
-        09:47:28 up 5 days, 12:37,  2 users,  load average: 0.23, 0.41, 0.47
-        USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
-        zach     tty1      Mon20   41:38m 11:17   0.00s xinit /home/zach/.xinitrc -- /et
-        zach     pts/0     09:33    0.00s  0.01s  0.00s w
+    09:47:28 up 5 days, 12:37,  2 users,  load average: 0.23, 0.41, 0.47
+    USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+    zach     tty1      Mon20   41:38m 11:17   0.00s xinit /home/zach/.xinitrc -- /et
+    zach     pts/0     09:33    0.00s  0.01s  0.00s w
 
 Now load averages are 0.23, 0.41, 0.47
 
