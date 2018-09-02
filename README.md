@@ -14,7 +14,14 @@ Curated list of things to check for troubleshooting
 ## Hardware
 
 ### CPU
-*First:* Using `lscpu` command, We're going to see how want CPUs we have:
+
+*First:* Using `lscpu` command to determine the number of CPUs we have
+
+<details>
+<summary><b>How to use `lscpu`?</b></summary><br>
+
+
+Expample #1: 
 
     $ lscpu
     Architecture:          x86_64
@@ -50,7 +57,7 @@ of which each can run up to 2 threads
 
 at the same time. These threads are the core's logical capabilities.
 
-**Intel refers to a physical processor as a socket.**
+**Note: Intel refers to a physical processor as a socket.**
 
 From `man lscpu`:
 
@@ -61,7 +68,48 @@ From `man lscpu`:
    SOCKET<br>
    A socket can contain several cores.<br>
 
-https://unix.stackexchange.com/a/279354/123625
+Expample #2: Taking it a bit further
+
+    $ lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('
+    CPU(s):                32
+    Thread(s) per core:    2
+    Core(s) per socket:    8
+    Socket(s):             2
+
+> CPUs = Threads per core X cores per socket X sockets
+
+
+</details>
+
+
+
+*Second:*
+
+Getting the load averages for the past 1, 5, and 15 minutes.
+
+    $ w 
+        09:47:28 up 5 days, 12:37,  2 users,  load average: 0.23, 0.41, 0.47
+        USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+        zach     tty1      Mon20   41:38m 11:17   0.00s xinit /home/zach/.xinitrc -- /et
+        zach     pts/0     09:33    0.00s  0.01s  0.00s w
+
+Now load averages are 0.23, 0.41, 0.47
+
+<details>
+<summary><b>What is load average?</b></summary><br>
+
+Linux load averages are "system load averages" that show the running thread (task) demand on the system as an average number of running plus waiting threads. This measures demand, which can be greater than what the system is currently processing. Most tools show three averages, for 1, 5, and 15 minutes.
+
+Some interpretations:
+
+- If the averages are 0.0, then your system is idle.
+- If the 1 minute average is higher than the 5 or 15 minute averages, then load is increasing.
+- If the 1 minute average is lower than the 5 or 15 minute averages, then load is decreasing.
+- If they are higher than your CPU count, then you might have a performance problem (it depends).
+
+</details>
+
+
 
 ### Disk
 https://unix.stackexchange.com/questions/125429/tracking-down-where-disk-space-has-gone-on-linux
