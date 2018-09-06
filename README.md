@@ -103,6 +103,12 @@ Some interpretations:
 - If the 1 minute average is lower than the 5 or 15 minute averages, then load is decreasing.
 - If they are higher than your CPU count, then you might have a performance problem (it depends).
 
+**Note:** Load average is a measurement of how many tasks are waiting in a kernel run queue (not just CPU time but also disk activity) over a period of time. CPU utilization is a measure of how busy the CPU is right now.
+
+Often times these two numbers have patterns that correlate to each other, but you can't think of them as the same. You can have a high load with nearly 0% CPU utilization (such as when you have a lot of IO data stuck in a wait state) and you can have a load of 1 and 100% CPU, when you have a single threaded process running full tilt. Also for short periods of time you can see the CPU at close to 100% but the load is still below 1 because the average metrics haven't "caught up" yet.
+
+> Chances are if you are seeing a regular high load number with no corresponding CPU activity, you are having a storage problem of some kind.
+
 </details>
 
 
