@@ -111,7 +111,8 @@ Often times these two numbers have patterns that correlate to each other, but yo
 
 </details>
 
-
+[Understanding Linux CPU stats](http://blog.scoutapp.com/articles/2015/02/24/understanding-linuxs-cpu-stats
+)
 
 ### Disk
 https://unix.stackexchange.com/questions/125429/tracking-down-where-disk-space-has-gone-on-linux
