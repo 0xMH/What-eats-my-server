@@ -124,6 +124,23 @@ iotop
 
 http://www.catonmat.net/blog/unix-utilities-lsof/
 
+lsof -nPp <pid>
+-n Inhibits the conversion of network numbers to host names.-PInhibits the conversion of port numbers to names for network files
+
+
+FD  is  followed  by one of these characters, describing the
+      mode under which the file is open:
+
+           r for read access;
+           w for write access;
+           u for read and write access;
+           space if mode unknown and no lock
+            character follows;
+           '-' if mode unknown and lock
+            character follows.
+
+http://www.catonmat.net/blog/unix-utilities-lsof/
+
 ## Journalctl
 https://superuser.com/a/1188380/760542
 
@@ -146,3 +163,13 @@ Debug permission issues:
 Debug all file related sys calls
     
     strace -e file myprog
+
+strace -ttTp <pid> -o <file>
+   
+-t  Prefix each line of the trace with the time of day.
+
+-tt If given twice, the time printed will include the microseconds.
+
+-T  Show the time spent in system calls.
+
+-o  filenameWrite the trace output to the file filename rather than to stderr.
