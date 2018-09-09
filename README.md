@@ -10,6 +10,8 @@ Curated list of things to check for troubleshooting
     * Disk
 - [Journalctl]()
 - Network
+- Strace
+
 
 ## Hardware
 
@@ -118,6 +120,10 @@ Often times these two numbers have patterns that correlate to each other, but yo
 https://unix.stackexchange.com/questions/125429/tracking-down-where-disk-space-has-gone-on-linux
 https://unix.stackexchange.com/questions/113840/whats-eating-my-disk-space
 
+iotop
+
+http://www.catonmat.net/blog/unix-utilities-lsof/
+
 ## Journalctl
 https://superuser.com/a/1188380/760542
 
@@ -125,3 +131,18 @@ https://superuser.com/a/1188380/760542
 Knowing what serivce lestining on a port
 `ss -plnt 'sport = :80'`
 
+## Strace 
+
+    strace /usr/local/bin/cough <any required argument for cough here>
+
+or
+
+    strace -o <out_file> /usr/local/bin/cough <any required argument for cough here>
+
+Debug permission issues:
+
+    strace -e trace=open,stat,read,write gnome-calculator
+    
+Debug all file related sys calls
+    
+    strace -e file myprog
